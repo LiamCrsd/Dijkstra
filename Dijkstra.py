@@ -2,7 +2,7 @@ import math
 from collections import defaultdict
 from queue import PriorityQueue
 
-def dijkstra(graphe:dict, start_vertex:tuple) -> (dict, dict):
+def dijkstra(graphe:dict, start_vertex) -> (dict, dict):
     graphe = {**graphe}
     D = {e: math.inf for e in graphe.keys()}
     V = {}
@@ -25,7 +25,7 @@ def dijkstra(graphe:dict, start_vertex:tuple) -> (dict, dict):
 
                 if new_cost < old_cost:
                     pq.put((new_cost, neighbor))
-                    V[neighbor] : tuple = current_vertex
+                    V[neighbor] = current_vertex
                     D[neighbor] : int = new_cost
         except:
             pass
